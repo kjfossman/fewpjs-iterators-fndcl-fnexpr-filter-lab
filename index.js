@@ -1,6 +1,13 @@
 // Code your solution here
-let findMatching = (drivers, string) => {
-    drivers.filter(driver => {
-        return driver.toUpperCase === string.toUpperCase
-    })
+findMatching = (drivers, string) => {
+    return drivers.filter(driver => driver.toUpperCase() === string.toUpperCase() )
+}
+
+function fuzzyMatch(drivers, string) {
+    return drivers.filter(driver => 
+        driver.toLowerCase().indexOf(string.toLowerCase()) === 0)
+}
+
+function matchName(drivers, string) {
+    return drivers.filter(driver => driver.name.toLowerCase() === string.toLowerCase())
 }
